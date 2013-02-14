@@ -1,5 +1,5 @@
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 __author__ = 'Juan Batiz-Benet'
 __email__ = 'juan@benet.ai'
 __doc__ = '''
@@ -12,27 +12,27 @@ Tested with:
 '''
 
 import pylru
-import datastore
+import datastore.core
 
 
 class LRUCacheDatastore(datastore.Datastore):
   '''Represents an LRU cache datastore, backed by pylru.
 
-     Hello World:
+  Hello World:
 
-       >>> import datastore.pylru
-       >>>
-       >>> ds = datastore.pylru.LRUCacheDatastore(100)
-       >>>
-       >>> hello = datastore.Key('hello')
-       >>> ds.put(hello, 'world')
-       >>> ds.contains(hello)
-       True
-       >>> ds.get(hello)
-       'world'
-       >>> ds.delete(hello)
-       >>> ds.get(hello)
-       None
+      >>> import datastore.pylru
+      >>>
+      >>> ds = datastore.pylru.LRUCacheDatastore(100)
+      >>>
+      >>> hello = datastore.Key('hello')
+      >>> ds.put(hello, 'world')
+      >>> ds.contains(hello)
+      True
+      >>> ds.get(hello)
+      'world'
+      >>> ds.delete(hello)
+      >>> ds.get(hello)
+      None
 
   '''
 

@@ -8,7 +8,7 @@ pkgname = 'datastore.pylru'
 # gather the package information
 main_py = open('datastore/pylru/__init__.py').read()
 metadata = dict(re.findall("__([a-z]+)__ = '([^']+)'", main_py))
-packages = filter(lambda p: p.startswith(pkgname), find_packages())
+packages = filter(lambda p: p.startswith('datastore'), find_packages())
 
 # convert the readme to pypi compatible rst
 try:
@@ -34,7 +34,8 @@ setup(
     'pylru',
   ],
   packages=packages,
-  install_requires=['datastore>=0.3.0', 'pylru>=1.0.5'],
+  namespace_packages=['datastore'],
+  install_requires=['datastore>=0.3.3', 'pylru>=1.0.5'],
   test_suite='datastore.pylru.test',
   license='MIT License',
   classifiers=[
